@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+:root {
+  --green: #62d010;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  /* Descomentar si usas sticky */
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.App {
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+body {
+  font-family: sans-serif;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+.App {
+  text-align: center;
+}
+
+/* TYPE */
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+.main {
+  color: var(--green);
+}
+
+p {
+  margin: 1em;
+  line-height: 1.5em;
+}
+
+h2 {
+  font-size: 100%;
+  color: var(--green);
+}
+/* CSS SPRITES */
+
+.dead,
+.alive,
+.survivor {
+  background-size: contain !important;
+  image-rendering: pixelated;
+  background-blend-mode: multiply;
+}
+
+.dead {
+  background-image: url("./dead.png");
+  animation-delay: 1s !important;
+  animation: playDead 2s steps(1);
+}
+
+.alive {
+  background-image: url("./alive.png");
+  animation: playAlive 2s steps(1) infinite;
+}
+
+.survivor {
+  background-image: url("./survive.png");
+  animation: playSurvivor 1s steps(1) infinite;
+  /* background-color: var(--green); */
+}
+
+.survivorText {
+  animation: playSurvivorText 1s steps(1) infinite;
+}
+
+.gameOver,
+.fondoGeneral {
+  background: var(--green);
+  transition: all 200ms;
+}
+
+.gameOver {
+  animation: gameOver 2s steps(21) infinite;
+}
+
+.fondoGeneral {
+  opacity: 0.2;
+}
+
+@keyframes playDead {
+  0% {
+    background-image: url("./dead2.png");
+    /* background-color: var(--green); */
+  }
+  50% {
+    background-image: url("./dead.png");
+  }
+  70% {
+    background-image: url("./dead3.png");
+    /* background-color: var(--green); */
+  }
+}
+
+@keyframes playAlive {
+  0% {
+    background-image: url("./alive.png");
+  }
+  50% {
+    background-image: url("./alive2.png");
+  }
+  70% {
+    background-image: url("./alive.png");
+  }
+}
+
+@keyframes playSurvivor {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+    background-image: url("./survive2.png");
+  }
+}
+
+@keyframes playSurvivorText {
+  from,
+  50%,
+  to {
+    color: white;
+  }
+
+  25%,
+  75% {
+    color: var(--green);
+  }
+}
+
+@keyframes gameOver {
+  from,
+  50%,
+  to {
+    opacity: 0.2;
+  }
+
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+
+/* RANGE */
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: var(--green); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: var(--green); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* CSS RANGE */
+
+button {
+  background: black;
+  color: white;
+}
+.active {
+  background: white;
+  color: black;
+}
