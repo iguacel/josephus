@@ -76,8 +76,8 @@ h2 {
 
 .dead {
   background-image: url("./dead.png");
-  animation-delay: 1s !important;
-  animation: playDead 1s steps(1) infinite;
+  /* animation-delay: 1s !important; */
+  animation: playDead 700ms steps(1) infinite;
 }
 
 .alive {
@@ -112,15 +112,12 @@ h2 {
 @keyframes playDead {
   0% {
     background-image: url("./dead2.png");
-    background-color: blue;
   }
   50% {
     background-image: url("./dead.png");
-    background-color: red;
   }
   70% {
     background-image: url("./dead3.png");
-    background-color: gold;
   }
 }
 
