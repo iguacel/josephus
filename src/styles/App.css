@@ -76,13 +76,19 @@ h2 {
 
 .dead {
   background-image: url("./dead.png");
-  /* animation-delay: 1s !important; */
   animation: playDead 700ms steps(1) infinite;
 }
 
 .alive {
   background-image: url("./alive.png");
   animation: playAlive 2s steps(1) infinite;
+}
+
+.alive:nth-of-type(even) {
+  animation-delay: 1s;
+}
+.alive:nth-of-type(odd) {
+  animation-delay: 2s;
 }
 
 .survivor {
@@ -111,13 +117,13 @@ h2 {
 
 @keyframes playDead {
   0% {
-    background-image: url("./dead2.png");
-  }
-  50% {
-    background-image: url("./dead.png");
+    background-image: url("./dead3.png");
   }
   70% {
-    background-image: url("./dead3.png");
+    background-image: url("./dead.png");
+  }
+  90% {
+    background-image: url("./dead2.png");
   }
 }
 
@@ -125,10 +131,10 @@ h2 {
   0% {
     background-image: url("./alive.png");
   }
-  50% {
+  80% {
     background-image: url("./alive2.png");
   }
-  70% {
+  90% {
     background-image: url("./alive.png");
   }
 }
