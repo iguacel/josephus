@@ -23,7 +23,7 @@ html {
 
 .App {
   text-align: center;
-  font-family: "Press Start 2P", cursive;
+  font-family: "Press Start 2P", sans-serif;
   padding: 1em;
   margin-top: 2em;
 }
@@ -77,7 +77,7 @@ h2 {
 .dead {
   background-image: url("./dead.png");
   animation-delay: 1s !important;
-  animation: playDead 2s steps(1);
+  animation: playDead 1s steps(1) infinite;
 }
 
 .alive {
@@ -112,14 +112,15 @@ h2 {
 @keyframes playDead {
   0% {
     background-image: url("./dead2.png");
-    /* background-color: var(--green); */
+    background-color: blue;
   }
   50% {
     background-image: url("./dead.png");
+    background-color: red;
   }
   70% {
     background-image: url("./dead3.png");
-    /* background-color: var(--green); */
+    background-color: gold;
   }
 }
 

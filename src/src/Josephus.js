@@ -208,15 +208,12 @@ const Josephus = () => {
                       }px) rotate(-${rotateAngle}deg) scale(${
                         isDead ? 1.4 : 1
                       })`,
-                      transition: "all 200ms",
+                      transition: "all 500ms",
                       // flex
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       borderRadius: "50%",
-                      animationDelay: `${i * 1600}ms`,
-                      willChange:
-                        "transform opacity background-image, background-color",
                       backgroundColor: seleccionado ? "#79FF00" : ""
                     }}
                   >
@@ -224,8 +221,8 @@ const Josephus = () => {
                       style={{
                         transform: `${
                           !isDead
-                            ? "translate(30px, -10px)"
-                            : "translate(30px, -30px) scale(1.2)"
+                            ? "translate(30px, -14px)"
+                            : "translate(30px, -10px) scale(1.2)"
                         }`,
                         background: "black",
                         width: "25px",
