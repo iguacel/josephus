@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/josephus/static/css/main.1ce57910.chunk.css",
+    "main.css": "/josephus/static/css/main.7f31fba0.chunk.css",
     "main.js": "/josephus/static/js/main.01534b3b.chunk.js",
     "main.js.map": "/josephus/static/js/main.01534b3b.chunk.js.map",
     "runtime-main.js": "/josephus/static/js/runtime-main.65f9152e.js",
@@ -8,14 +8,14 @@
     "static/js/2.09adb09b.chunk.js": "/josephus/static/js/2.09adb09b.chunk.js",
     "static/js/2.09adb09b.chunk.js.map": "/josephus/static/js/2.09adb09b.chunk.js.map",
     "index.html": "/josephus/index.html",
-    "precache-manifest.a284b34742ed181c7c40d3b2f9b79580.js": "/josephus/precache-manifest.a284b34742ed181c7c40d3b2f9b79580.js",
+    "precache-manifest.3d2ae184dcef626b12537f37d565dc93.js": "/josephus/precache-manifest.3d2ae184dcef626b12537f37d565dc93.js",
     "service-worker.js": "/josephus/service-worker.js",
-    "static/css/main.1ce57910.chunk.css.map": "/josephus/static/css/main.1ce57910.chunk.css.map"
+    "static/css/main.7f31fba0.chunk.css.map": "/josephus/static/css/main.7f31fba0.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.65f9152e.js",
     "static/js/2.09adb09b.chunk.js",
-    "static/css/main.1ce57910.chunk.css",
+    "static/css/main.7f31fba0.chunk.css",
     "static/js/main.01534b3b.chunk.js"
   ]
 }
