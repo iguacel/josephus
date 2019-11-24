@@ -42,8 +42,6 @@ const Josephus = () => {
   const winner = seconds === n - 1;
 
   const playAgain = () => {
-    console.log("update");
-
     setSeleccion(false);
 
     setSeleccion(false);
@@ -90,17 +88,7 @@ const Josephus = () => {
 
   return (
     <div>
-      <Fixed
-        seleccionado={seleccion}
-        n={n}
-        k={k}
-        josephusList={josephusList}
-        winner={winner}
-        gameOver={gameOver}
-      />
-
-      <h4 style={{ marginBottom: "1em" }}>JOSE</h4>
-
+      <Fixed winner={winner} gameOver={gameOver} />
       <div>
         <h1
           className={list.length === 1 ? "survivorText" : ""}
@@ -108,27 +96,6 @@ const Josephus = () => {
         >
           JOSEPHUS <br /> SURVIVOR
         </h1>
-        {/* <p>Time elapsed: {seconds}s</p>
-        <p>Seleccion: {seleccion}</p> */}
-        <p>Killing:</p>
-        <p style={{ marginTop: "-.8em" }}>
-          <span className="main">1</span> every{" "}
-          <span className="main">{k}</span>
-        </p>
-        <p style={{ fontSize: "80%" }}>
-          Remaining: {list.length}/{n}
-        </p>
-
-        {list.length > 1 && (
-          <p style={{ fontSize: "80%" }}>
-            Last dead: no. {josephusList[seconds]}
-          </p>
-        )}
-        {list.length === 1 && (
-          <p style={{ fontSize: "80%" }} className="survivorText">
-            Survivor: {josephusList[josephusList.length - 1]}{" "}
-          </p>
-        )}
 
         {debug && (
           <div
@@ -151,18 +118,73 @@ const Josephus = () => {
           style={{
             maxWidth: "380px",
             margin: "0 auto",
-            fontSize: ".7em",
+            fontSize: "70%",
             lineHeight: "1.5em",
             marginTop: "5em",
             marginBottom: "3em",
-            height: "50px"
+            height: "100px"
           }}
         >
+          {seconds !== 0 && (
+            <>
+              <p>Killing:</p>
+              <p style={{ marginTop: "-.8em" }}>
+                <span className="main">1</span> every{" "}
+                <span className="main">{k}</span>
+              </p>
+              <p>
+                Remaining:{" "}
+                <span className="main">
+                  {list.length}/{n}
+                </span>
+              </p>
+
+              {list.length > 1 && (
+                <p>
+                  Last dead:{" "}
+                  <span className="main">no. {josephusList[seconds]}</span>
+                </p>
+              )}
+              {list.length === 1 && (
+                <p className="survivorText">
+                  Survivor:{" "}
+                  <span className="main">
+                    {josephusList[josephusList.length - 1]}{" "}
+                  </span>
+                </p>
+              )}
+              <p>
+                Time elapsed: <span className="main">{seconds}s</span>
+              </p>
+              <p>
+                Selected: <span className="main">{seleccion}</span>
+              </p>
+            </>
+          )}
+
           {seconds === 0 && (
-            <p>
-              Number <span className="main">{josephusList[seconds]}</span> is
-              the first to go, select the survivor
-            </p>
+            <>
+              <p>
+                <span className="main">{n}</span> people are standing in a
+                circle waiting to be executed.{" "}
+              </p>
+              <p>
+                They form a circle and proceed to kill{" "}
+                <span className="main">1 person every {k}</span>.
+              </p>
+              <p>
+                Number <span className="main">{josephusList[seconds]}</span>, in
+                the center, is the first to go.
+              </p>
+              <p style={{ marginTop: "2em" }}>
+                <span
+                  style={{ fontSize: "120%" }}
+                  className="main survivorText"
+                >
+                  SELECT THE SURVIVOR
+                </span>
+              </p>
+            </>
           )}
         </div>
 
@@ -171,7 +193,9 @@ const Josephus = () => {
           style={{
             maxWidth: "600px",
             margin: "0 auto",
-            position: "relative"
+            position: "relative",
+            marginTop: "2em",
+            marginBottom: "2em"
           }}
         >
           <ul
@@ -244,7 +268,14 @@ const Josephus = () => {
           </ul>
         </div>
       </div>
-      <InGame gameOver={gameOver} winner={winner} playAgain={playAgain} />
+      <InGame
+        gameOver={gameOver}
+        winner={winner}
+        playAgain={playAgain}
+        n={n}
+        k={k}
+        remaining={list.length}
+      />
 
       <Range speed={speed} setSpeed={setSpeed} />
     </div>
