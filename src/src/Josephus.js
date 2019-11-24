@@ -121,7 +121,8 @@ const Josephus = () => {
             fontSize: "70%",
             lineHeight: "1.5em",
             marginTop: "5em",
-            marginBottom: "3em"
+            marginBottom: "3em",
+            minHeight: "130px"
           }}
         >
           {seconds !== 0 && (
@@ -168,12 +169,10 @@ const Josephus = () => {
                 circle waiting to be executed.{" "}
               </p>
               <p>
-                They form a circle and proceed to kill{" "}
-                <span className="main">1 person every {k}</span>.
-              </p>
-              <p>
-                Number <span className="main">{josephusList[seconds]}</span>, in
-                the center, is the first to go.
+                They proceed to kill{" "}
+                <span className="main">1 person every {k}</span>. Number{" "}
+                <span className="main">{josephusList[seconds]}</span>, in the
+                center, is the first to go.
               </p>
               <p style={{ marginTop: "2em" }}>
                 <span
