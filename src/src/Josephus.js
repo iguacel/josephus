@@ -121,8 +121,7 @@ const Josephus = () => {
             fontSize: "70%",
             lineHeight: "1.5em",
             marginTop: "5em",
-            marginBottom: "3em",
-            height: "100px"
+            marginBottom: "3em"
           }}
         >
           {seconds !== 0 && (

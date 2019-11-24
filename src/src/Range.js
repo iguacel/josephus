@@ -18,7 +18,7 @@ function Range({ speed, setSpeed }) {
           className={speed === 500 ? "active" : ""}
           onClick={() => setSpeed(1000)}
         >
-          More slow
+          Slower
         </button>
       )}
     </div>
